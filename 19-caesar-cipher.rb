@@ -23,8 +23,28 @@
 # Difficulty: hard. Because this problem relies on outside
 # information, we would not give it to you on the timed challenge. :-)
 
+
+# Haven't used the '%' to wrap 'z' to 'a', but the solution works. Any better way to refactor it?????????
 def caesar_cipher(offset, string)
-	# haven't started working on this one yet. 
+	new_str = []
+	i = 0 
+	while i < string.length #&& string =~ /a..z/
+	  str_num = string[i].ord + 3
+	  
+	  #Check special char:
+	  
+      if string[i] =~ /[^A-Za-z0-9_]/
+      	new_str.push(string[i])
+      elsif string[i] =~ /[x-z]/	
+	    new_str.push((str_num - 26).chr) # Maybe use '%' here? but not sure how the calculation works??????????
+	  else
+	    new_str.push(str_num.chr)
+	  end
+	  
+	  i += 1
+	end
+	puts new_str.join("")
+	return new_str.join("") 
 end
 
 # These are tests to check that your code is working. After writing
