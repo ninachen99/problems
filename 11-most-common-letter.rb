@@ -33,6 +33,19 @@ def most_common_letter(string)
 	return [most_common_letter, most_common_count]
 end
 
+# my solution here: it returns the right letter and count in an array
+# but not in the right form ["a" , 3], it is [a , 3] now, not sure why??????????
+def most_common_letter(string)
+	my_words = Hash.new(0)
+	
+	string.split('').each { |ch| my_words[ch] += 1 }
+	
+    freq = (my_words.max_by {|ch, count| count }).to_a.join(", ")
+    
+	puts freq
+    # loop through hash and find the most common letter
+end
+
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
 
