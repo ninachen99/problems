@@ -60,12 +60,10 @@ def nth_prime(n)  # issues here.
   end
 end
 
-<<<<<<< HEAD
 
-# Still the array way, but i have to start the 
-=======
+
+
 # Still focus on array, but i have to start the 
->>>>>>> 60fc80392861e2a6bd4af5204282a5980b667d7c
 # Array from 2, otherwise the my_primes arr
 # Starts from 3, the code passes the test, but 
 # it is not the final solution, since
@@ -75,7 +73,16 @@ end
 # 
 def nth_prime(n)
   my_primes = [2] # have to starts at 2 manually here for now. 
-<<<<<<< HEAD
+
+  for number in 2..100  # set limit here tempararily. 
+   if is_prime?(number)
+     my_primes.push(number)
+   end
+   number += 1
+  end
+  puts my_primes[1]
+  
+
   
   for number in 2..100  # set limit here tempararily. 
    if is_prime?(number)
@@ -85,17 +92,7 @@ def nth_prime(n)
   end
   puts my_primes[1]
   
-=======
-  
-  for number in 2..100  # set limit here tempararily. 
-   if is_prime?(number)
-     my_primes.push(number)
-   end
-   number += 1
-  end
-  puts my_primes[1]
-  
->>>>>>> 60fc80392861e2a6bd4af5204282a5980b667d7c
+
   i = 0
   while i < my_primes.length
     if n === i
@@ -107,23 +104,11 @@ def nth_prime(n)
 end
 
 
-<<<<<<< HEAD
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-=======
->>>>>>> 60fc80392861e2a6bd4af5204282a5980b667d7c
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
 

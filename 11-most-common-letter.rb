@@ -45,10 +45,7 @@ def most_common_letter(string)
 	puts freq
     # loop through hash and find the most common letter
 end
-<<<<<<< HEAD
 
-=======
->>>>>>> 60fc80392861e2a6bd4af5204282a5980b667d7c
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
 
