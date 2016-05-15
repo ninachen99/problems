@@ -34,8 +34,8 @@ def CountingMinutesI(str)
   puts str.split("-")[0]
  
   puts str.split("-")[1]
-  puts start = Time.parse(str.split("-")[0])
-  puts stop =  Time.parse(str.split("-")[1])
+   start = Time.parse(str.split("-")[0])
+   stop =  Time.parse(str.split("-")[1])
   
   # does this reset the time by 24 hours? why???????
   if stop < start
@@ -51,7 +51,23 @@ def CountingMinutesI(str)
  puts elapsed_time/60
 end
 
+#Solution 3:
+require 'date'
 
+def CountingMinutesI(str)
+  start_time = DateTime.parse(str.split('-').first) 
+  end_time = DateTime.parse(str.split('-').last)
+  
+  start_time_int = start_time.hour * 60 + start_time.min
+  end_time_int = end_time.hour * 60 + end_time.min
+  
+  diff = end_time_int - start_time_int
+
+  # If it is negative then the time is starting in a new day. 
+  # Don't quite understand it??????
+  diff >= 0 ? diff : diff + 1440 #?????
+   
+end
 
 # keep this function call here    
 puts CountingMinutesI("12:30am-12:00pm") == 690
