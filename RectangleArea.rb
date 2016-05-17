@@ -20,6 +20,23 @@ def RectangleArea(strArr)
  result
 end
    
+
+# from the given solutions: 
+def RectangleArea(strArr)
+  # Why we need #scan and #flatten here????
+  pool = strArr.join.scan(/(-?[0-9]+)/).flatten.map{|i|i.to_i}
+   # 
+   rec_l = [pool[1], pool[3], pool[5], pool[7]].sort
+   rec_w = [pool[0], pool[2], pool[4], pool[6]].sort
+  
+  length = (rec_l[-1] - rec_l[0]).abs
+  width = (rec_w[-1] - rec_w[0]).abs
+  
+  length * width
+         
+end
+
+
 # keep this function call here    
 RectangleArea(["(-1 -1)","(0 0)","(-1 0)","(0 -1)"])  
 #1.When the input was ("(-1 -1)","(0 0)","(-1 0)","(0 -1)") your output was incorrect.
