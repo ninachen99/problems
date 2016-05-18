@@ -55,7 +55,7 @@ def caesar_cipher(offset, string)
 	string.each do |s|
 	  str_num = s.ord + offset
 	  
-      if str_num < "z".ord
+      if str_num <= "z".ord
         new_str.push(str_num.chr)
 	  else
 	  	# Should i hard code "1" here, or do sth different?????
