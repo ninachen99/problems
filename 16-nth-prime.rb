@@ -81,17 +81,6 @@ def nth_prime(n)
    number += 1
   end
   puts my_primes[1]
-  
-
-  
-  for number in 2..100  # set limit here tempararily. 
-   if is_prime?(number)
-     my_primes.push(number)
-   end
-   number += 1
-  end
-  puts my_primes[1]
-  
 
   i = 0
   while i < my_primes.length
@@ -102,9 +91,6 @@ def nth_prime(n)
     i += 1
   end
 end
-
-
-
 
 
 

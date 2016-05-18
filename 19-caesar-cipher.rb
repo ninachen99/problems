@@ -47,6 +47,37 @@ def caesar_cipher(offset, string)
 	return new_str.join("") 
 end
 
+# Solution 2: 
+
+def caesar_cipher(offset, string)
+	new_str = []
+	string = string.split("")
+	string.each do |s|
+	  str_num = s.ord + offset
+	  
+      if str_num < "z".ord
+        new_str.push(str_num.chr)
+	  else
+	  	# Should i hard code "1" here, or do sth different?????
+	    str_num = str_num % ("z".ord) + "a".ord - 1
+	    new_str.push(str_num.chr)
+	  end
+	end
+	puts new_str.join("")
+	return new_str.join("") 
+end
+
+# the space between the strings turn out to be "#"????
+# but i split the string, why we still have space????
+# How to avoid it?????
+#Tests for #caesar_cipher
+#===============================================
+#def
+#caesar_cipher(3, "abc") == "def": true
+#def#abc
+#caesar_cipher(3, "abc xyz") == "def abc": false
+===============================================
+
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
 

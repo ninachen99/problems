@@ -100,6 +100,28 @@ def num_repeats(string)
 	return repeats
 end
 
+# Brendan's solution:
+def num_repeats(string)
+	counts = {}
+	idx = 0
+	number_of_repeats = 0
+	
+	while idx < string.length
+	 if counts.key?(string[idx])
+	  	counts[string[idx]] += 1
+	  else
+	  	counts[string[idx]] = 1
+	  end
+	  idx += 1
+	end
+	counts.each do |letter, count|
+	 if count > 1
+	 	number_of_repeats += 1
+	 end
+	end
+	number_of_repeats
+end
+
 # These are tests to check that your code is working. After writing
 # your solution, they should all print true.
 
