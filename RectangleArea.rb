@@ -23,7 +23,8 @@ end
 
 # from the given solutions: 
 def RectangleArea(strArr)
-  # Why we need #scan and #flatten here????
+  # scan all neg and pos numbers, return an new array
+  # flatten it and return an new array, recursively
   pool = strArr.join.scan(/(-?[0-9]+)/).flatten.map{|i|i.to_i}
    # 
    rec_l = [pool[1], pool[3], pool[5], pool[7]].sort

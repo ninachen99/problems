@@ -51,7 +51,7 @@ def CountingMinutesI(str)
  puts elapsed_time/60
 end
 
-#Solution 3:
+#Brendan's solution:
 require 'date'
 
 def CountingMinutesI(str)
@@ -63,11 +63,12 @@ def CountingMinutesI(str)
   
   diff = end_time_int - start_time_int
 
-  # If it is negative then the time is starting in a new day. 
-  # Don't quite understand it??????
-  diff >= 0 ? diff : diff + 1440 #?????
+  # If it is negative then the time is starting in a new day, 
+  # by adding 1440 = 24 hours
+  diff >= 0 ? diff : diff + 1440 
    
 end
+# When the input was "5:00pm-5:11pm" your output was incorrect.
 
 # keep this function call here    
 puts CountingMinutesI("12:30am-12:00pm") == 690
