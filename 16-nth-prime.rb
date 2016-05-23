@@ -4,6 +4,76 @@
 # Difficulty: medium.
 
 # You may use our `is_prime?` solution.
+
+
+# coderbyte, second try: 
+#Using the Ruby language, have the function PrimeMover(num) 
+#return the numth prime number. The range will be from 1 to 10^4. 
+#For example: if num is 16 
+#the output should be 53 as 53 is the 16th prime number. 
+
+def is_prime?(number)
+  return false if number <= 1
+  i = 2
+  for i in 2..number - 1
+    return false if number % i == 0
+    i += 1
+  end
+  true
+end
+
+
+def PrimeMover(num)
+  primes = []
+  result = ''
+  arr = (1..10000).to_a
+  arr.each do |x| 
+    if is_prime?(x)
+      primes << x
+    end
+  end
+  
+  j = 1
+  while j < primes.length
+    if num == j
+      
+      result = primes[j-1]
+    end
+    j += 1
+  end
+  result
+end
+# refactor while loop to each:
+def PrimeMover(num)
+  primes = []
+  result = ''
+  arr = (1..10000).to_a
+  arr.each do |x| 
+    if is_prime?(x)
+      primes << x
+    end
+  end
+j = 0  
+primes.each do |i|
+  if num == j
+    # all tests passed, but anyway to change 'j-1'
+    # to something dynamic???????????????????????
+    result = primes[j - 1]
+  end
+  j += 1
+end
+result
+end
+   
+# keep this function call here    
+puts PrimeMover(9)  
+
+#Sample Test Cases
+#Input:9
+#Output:23
+
+#Input:100
+#Output:541
 def is_prime?(number)
   if number <= 1
     # only numbers > 1 can be prime.
