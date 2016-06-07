@@ -25,7 +25,7 @@ def KUniqueCharacters(str)
     	end
     end
     
-    # find the longest substring in the array.Then return the joined str.	
+    # find the longest substring in the array.Then return the	
      result.max_by(&:length).join
 end
 
