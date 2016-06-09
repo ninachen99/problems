@@ -49,3 +49,27 @@ Output:"false"
 Input:"10", "2", "2", "#", "1", "1", "#"
 Output:"true"
 =end
+# another solution: 
+def SymmetricTree(strArr)
+    # a binary tree array??
+    tree = []
+    # start the root 
+    i = 1
+    # push the argument array numbers to array
+    # create sub arrays as nodes
+    until strArr.empty? do
+        arr = []
+        i.times do
+            arr << strArr[0]
+            strArr.shift
+        end
+        # push all sub arrays - nodes into the tree.
+        tree << arr
+       
+        # each time, the tree increase by 2 times the previous row.
+        i *= 2
+    end
+    p tree
+    # if each nodes equal their reverse version, then the tree is symmetric. 
+    tree.all?{|row| row == row.reverse}
+end
