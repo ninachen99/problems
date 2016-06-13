@@ -1,12 +1,16 @@
 =begin
-Using the Ruby language, have the function FormattedDivision(num1,num2) take both parameters being passed, divide num1 by num2, and return the result as a string with properly formatted commas and 4 significant digits after the decimal place. For example: if num1 is 123456789 and num2 is. 10000 the output should be "12,345.6789". The output must contain a number in the one's place even if it is a zero. 
+Using the Ruby language, have the function FormattedDivision(num1,num2) 
+take both parameters being passed, divide num1 by num2, and return the result 
+as a string with properly formatted commas and 4 significant digits after the decimal place.
+ For example: if num1 is 123456789 and num2 is. 10000 the output should be "12,345.6789". 
+ The output must contain a number in the one's place even if it is a zero. 
 =end
 
 # solution 1: 
 def FormattedDivision(num1,num2)
   result = '%.4f' %[(num1.to_f/num2).round(4).to_s]
   
-  front = result.slice(0..(result.index(".") -1))
+  front = result.slice(0..(result.index(".") - 1))
                 .chars.to_a.reverse.each_slice(3)
                 .map(&:join).join(",").reverse 
 # here is what happended inside front:
@@ -25,7 +29,7 @@ p result.slice(0..(result.index('.')-1)).chars.reverse.each_slice(3).map(&:join)
   
   
 end
-   #number.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
+#number.to_s.chars.to_a.reverse.each_slice(3).map(&:join).join(",").reverse
 # keep this function call here    
 FormattedDivision(2, 3)  
 =begin
