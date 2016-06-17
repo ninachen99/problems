@@ -61,3 +61,23 @@ RunLength("yesssssnomaybe")
 
 #Input:"wwwbbbw"
 #Output:"3w3b1w"
+
+# other solution using each_with_index, much better, but couldn't figure out the scope:
+def run_length(str)
+    letters = str.split("")
+    count = 1
+    result = ""
+    letters.each_with_index do |letter, index|
+        nex_letter = letters[index + 1]
+        if letter == nex_letter
+            count += 1
+        else
+          # so we push it to the result after the 'if' finish running for each letter here? 
+            result << count.to_s << letter
+            count = 1
+        end
+    end
+   result
+end
+
+run_length("yesssssnomaybe")  
