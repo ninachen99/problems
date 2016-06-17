@@ -1,3 +1,5 @@
+# add a comment
+
 =begin
 Using the Ruby language, have the function SwapII(str) 
 take the str parameter and swap the case of each character. 
