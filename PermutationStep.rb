@@ -6,23 +6,26 @@ if num is 123 return 132, if it's 12453 return 12534.
 If a number has no greater permutations, return -1 (ie. 999). 
 =end
 
-# The solution passed 90% of the tests, but failed 2 tests, 
-# i wonder which part of the 
-# code didn't cover all possibilities???????????????
-def PermutationStep(num)
+# permutation's result has no order: 
+# 
+def permutation_step(num)
   arr = num.to_s.split("").map { |e| e.to_i }
   # array of permutation arrays.
   list_arr = arr.permutation.to_a
- # p !list_arr.all? { |e| e.join.to_i <= num }
- # if not all numbers are identical, and all permutations less than the number
-  if list_arr.uniq.length > 1 &&  !list_arr.all? { |e| e.join.to_i <= num }
-  	# return the permutation here: find the first permutation 
-  	# greater than the num. 
-     list_arr.find { |e| e.join.to_i > num }.join.to_i 
+ # if not all numbers are identical, and not all permutations less than the number
+  if list_arr.uniq.length > 1 &&  !list_arr.all? { |e| e.join.to_i <= num }  # how to refactor this line? So it is easier to read. 
+    # find the first permutation greater than the num. 
+    # the permutation result has no order
+      list = list_arr.map { |a| a.join.to_i}.sort
+    p list.find { |n| list.index(n) == list.index(num) + 1 }
   else
-  	-1
+    -1
   end
 end
+
+#list = list_arr.map{|a| a.join.to_i}.sort
+ #list.find{|n| list.index(n) == list.index(num) + 1}
+ permutation_step(41352)
    
 # keep this function call here    
 PermutationStep(11121)  
