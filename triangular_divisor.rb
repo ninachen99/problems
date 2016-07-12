@@ -10,7 +10,7 @@ end
 
 def nbr_factors(n)
   m = Math.sqrt(n)
-  2 * 1.upto(m).count { |i| (n % i).zero? } - ((n == m * m) ? 1 : 0)
+  2 * 1.upto(m).count { |i| (n % i).zero? } - ((n == m * m) ? 1 : 0) # not quite sure what this line does. 
 end   
 
 triangle_numbers_max_divisors(500) #=> 76_576_500
